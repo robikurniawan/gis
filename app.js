@@ -9,9 +9,7 @@ var area = [];
 var infoWindow;
 
 function peta_awal(){
-    // var bengkulu = new google.maps.LatLng(-4.6799727,119.8088258);
-    var bengkulu = new google.maps.LatLng(-3.7947856,102.2596498);
-    
+    var bengkulu = new google.maps.LatLng(-3.7932106,102.2513903);
     var petaoption = {
         zoom: 10,
         center: bengkulu,
@@ -35,10 +33,10 @@ function peta_awal(){
                 status_lokasi[i] = msg.bengkulu.lahan[i].status;
                 keterangan[i] = msg.bengkulu.lahan[i].keterangan;
                 lokasi[i] = msg.bengkulu.lahan[i].polygon;
-               
-                var str = lokasi[i].split(" "); 
-                
-                for (var j=0; j < str.length; j++) { 
+
+                var str = lokasi[i].split(" ");
+
+                for (var j=0; j < str.length; j++) {
                     var point = str[j].split(",");
                     cords.push(new google.maps.LatLng(parseFloat(point[0]), parseFloat(point[1])));
                 }
@@ -59,17 +57,17 @@ function peta_awal(){
                     fillColor: msg.bengkulu.lahan[i].warna,
                     fillOpacity: 0.5,
                     html: contentString
-                });     
+                });
 
-                cords = []; 
-                polygon.setMap(peta); 
+                cords = [];
+                polygon.setMap(peta);
                 infoWindow = new google.maps.InfoWindow();
                 google.maps.event.addListener(polygon, 'click', function(event) {
                     infoWindow.setContent(this.html);
                     infoWindow.setPosition(event.latLng);
                     infoWindow.open(peta);
                 });
-            }               
+            }
         }
     });
 }
@@ -85,7 +83,7 @@ $(document).ready(function(){
             cache: false,
             success: function(msg) {
                 // var bengkulu2 = new google.maps.LatLng(-6.284600, 107.381583);
-                var bengkulu2 = new google.maps.LatLng(-3.7947856,102.2596498);
+                var bengkulu2 = new google.maps.LatLng(-3.7932106,102.2513903);
                 var petaoption2 = {
                     zoom: 10,
                     center: bengkulu2,
@@ -103,10 +101,10 @@ $(document).ready(function(){
                     status_lokasi[i] = msg.bengkulu.lahan[i].status;
                     keterangan[i] = msg.bengkulu.lahan[i].keterangan;
                     lokasi[i] = msg.bengkulu.lahan[i].polygon;
-                    
-                    var str = lokasi[i].split(" "); 
-                    
-                    for (var j=0; j < str.length; j++) { 
+
+                    var str = lokasi[i].split(" ");
+
+                    for (var j=0; j < str.length; j++) {
                         var point = str[j].split(",");
                         cords.push(new google.maps.LatLng(parseFloat(point[0]), parseFloat(point[1])));
                     }
@@ -120,7 +118,7 @@ $(document).ready(function(){
                                         '<br>' +
                                         'Status Lokasi : '+ status_lokasi[i] +
                                         '<br>';
-                                        
+
                     polygon = new google.maps.Polygon({
                         paths: [cords],
                         strokeColor: msg.bengkulu.lahan[i].warna,
@@ -129,11 +127,11 @@ $(document).ready(function(){
                         fillColor: msg.bengkulu.lahan[i].warna,
                         fillOpacity: 0.5,
                         html: contentString
-                    });     
+                    });
 
                     cords = [];
 
-                    polygon.setMap(peta2); 
+                    polygon.setMap(peta2);
                     google.maps.event.addListener(polygon, 'click', function(event) {
                         infoWindow.setContent(this.html);
                         infoWindow.setPosition(event.latLng);

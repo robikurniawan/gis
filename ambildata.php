@@ -24,7 +24,7 @@ if($_SESSION['level'] == 'a'){
 
 $data = mysqli_query($link,$sql);
 
-$json = '{"karawang": {';
+$json = '{"bengkulu": {';
 $json .= '"lahan":[ ';
 while($x = mysqli_fetch_assoc($data)){
 	$json .= '{';

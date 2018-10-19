@@ -57,7 +57,7 @@ if ($kecamatan == '' && $status == '') {
 
 $data = mysqli_query($link,$sql);
 
-$json = '{"karawang": {';
+$json = '{"bengkulu": {';
 $json .= '"lahan":[ ';
 
 $polygon = '';
