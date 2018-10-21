@@ -1,3 +1,5 @@
+var id = [];
+var gambar = [];
 var nama = [];
 var kecamatan = [];
 var alamat = [];
@@ -27,6 +29,8 @@ function peta_awal(){
             var polygon;
             var cords = [];
             for(i=0;i<msg.bengkulu.lahan.length;i++){
+                id[i] = msg.bengkulu.lahan[i].id;
+                gambar[i] = msg.bengkulu.lahan[i].gambar;
                 nama[i] = msg.bengkulu.lahan[i].nama_lokasi;
                 kecamatan[i] = msg.bengkulu.lahan[i].kecamatan;
                 alamat[i] = msg.bengkulu.lahan[i].alamat;
@@ -47,7 +51,7 @@ function peta_awal(){
                                     'Keterangan: '+ keterangan[i] +
                                     '<br>' +
                                     'Status Lokasi : '+ status_lokasi[i] +
-                                    '<br>';
+                                    '<br><img src =dist/img/'+ gambar[i] +'> <h3> <a href="lokasi/detail/' + id[i] + ' "> Detail  </h3></a>  ';
 
                 polygon = new google.maps.Polygon({
                     paths: [cords],
@@ -101,6 +105,8 @@ $(document).ready(function(){
                     status_lokasi[i] = msg.bengkulu.lahan[i].status;
                     keterangan[i] = msg.bengkulu.lahan[i].keterangan;
                     lokasi[i] = msg.bengkulu.lahan[i].polygon;
+                    id[i] = msg.bengkulu.lahan[i].id;
+                    gambar[i] = msg.bengkulu.lahan[i].gambar;
 
                     var str = lokasi[i].split(" ");
 
@@ -117,7 +123,7 @@ $(document).ready(function(){
                                         'Keterangan: '+ keterangan[i] +
                                         '<br>' +
                                         'Status Lokasi : '+ status_lokasi[i] +
-                                        '<br>';
+                                        '<br><img src =dist/img/'+ gambar[i] +'> <h3> <a href="lokasi/detail/' + id[i] + ' "> Detail  </h3></a>  ';
 
                     polygon = new google.maps.Polygon({
                         paths: [cords],

@@ -35,7 +35,8 @@ while($x = mysqli_fetch_assoc($data)){
 		"keterangan":"'.htmlspecialchars($x['keterangan']).'",
 		"alamat":"'.htmlspecialchars($x['alamat']).'",
 		"polygon":"'.$x['polygon'].'",
-		"warna":"'.$x['warna'].'"
+		"warna":"'.$x['warna'].'",
+		"gambar":"'.$x['gambar'].'"
 	},';
 }
 

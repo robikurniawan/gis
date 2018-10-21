@@ -13,7 +13,7 @@ $q = '';
 
 if ($kecamatan != '' && $status == '') {
 	$q = "WHERE a.kecamatan = '".$kecamatan."'";
-} 
+}
 
 if ($kecamatan != '' && $status != '' ) {
 	$q = "WHERE a.status = '".$status."' AND a.kecamatan = '".$kecamatan."'";
@@ -32,7 +32,7 @@ if ($kecamatan == '' && $status == '') {
 
 	if ($kecamatan != '' && $status == '') {
 		$q = "WHERE a.kecamatan = '".$kecamatan."' AND a.id_user = '".$user."'  ";
-	} 
+	}
 
 	if ($kecamatan != '' && $status != '' ) {
 		$q = "WHERE a.status = '".$status."' AND a.kecamatan = '".$kecamatan."' AND a.id_user = '".$user."'  ";
@@ -71,7 +71,8 @@ if ($data) {
 			"keterangan":"'.$x['keterangan'].'",
 			"alamat":"'.$x['alamat'].'",
 			"polygon":"'.$x['polygon'].'",
-			"warna":"'.$x['warna'].'"
+			"warna":"'.$x['warna'].'",
+			"gambar":"'.$x['gambar'].'"
 		},';
 	}
 

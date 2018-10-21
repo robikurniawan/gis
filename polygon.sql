@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: 19 Okt 2018 pada 11.02
+-- Generation Time: 21 Okt 2018 pada 21.08
 -- Versi Server: 5.6.35
 -- PHP Version: 7.0.22
 
@@ -74,19 +74,23 @@ CREATE TABLE `lokasi_lahan` (
   `status` int(11) NOT NULL,
   `keterangan` text NOT NULL,
   `polygon` text NOT NULL,
-  `id_user` varchar(10) NOT NULL
+  `id_user` varchar(10) NOT NULL,
+  `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `lokasi_lahan`
 --
 
-INSERT INTO `lokasi_lahan` (`id`, `nama_lokasi`, `kecamatan`, `alamat`, `status`, `keterangan`, `polygon`, `id_user`) VALUES
-(32, 'Lahan Padi', 1, '', 3, 'Sementara penanaman', '-4.68025,120.31595 -4.66773,120.36717 -4.72723,120.34747 ', '3'),
-(33, 'Lahan Jagung', 2, '', 2, 'Gagal Panen Karna Musim', '-4.6125,120.15596 -4.53026,120.16612 -4.44801,120.21199 -4.56572,120.20464 -4.57953,120.17549 ', '2'),
-(34, 'Lahan Sawah', 2, '', 1, 'Sementara Dalam Masa Panen', '-4.71242,120.169 -4.60829,120.13968 -4.54248,120.25044 -4.66942,120.28934 -4.72518,120.19366 ', '2'),
-(35, 'Lahan Tak Terpakai', 1, '', 2, 'Sementara Proses Perbaikan', '-4.34416,120.2253 -4.27011,120.28388 -4.19331,120.35481 -4.31346,120.35388 -4.398,120.33786 ', '3'),
-(36, 'Lahan Penanaman Jati', 1, '', 3, 'Proses Pananaman ', '-4.64535,120.38323 -4.62266,120.38138 -4.62461,120.40562 -4.64957,120.42942 -4.65195,120.39073 ', '3');
+INSERT INTO `lokasi_lahan` (`id`, `nama_lokasi`, `kecamatan`, `alamat`, `status`, `keterangan`, `polygon`, `id_user`, `gambar`) VALUES
+(32, 'Lahan Padi', 1, '', 3, 'Sementara penanaman', '-4.68025,120.31595 -4.66773,120.36717 -4.72723,120.34747 ', '3', 'avatar.png'),
+(33, 'Lahan Jagung', 2, '', 2, 'Gagal Panen Karna Musim', '-4.6125,120.15596 -4.53026,120.16612 -4.44801,120.21199 -4.56572,120.20464 -4.57953,120.17549 ', '2', 'avatar2.png'),
+(34, 'Lahan Sawah', 2, '', 1, 'Sementara Dalam Masa Panen', '-4.71242,120.169 -4.60829,120.13968 -4.54248,120.25044 -4.66942,120.28934 -4.72518,120.19366 ', '2', ''),
+(35, 'Lahan Tak Terpakai', 1, '', 2, 'Sementara Proses Perbaikan', '-4.34416,120.2253 -4.27011,120.28388 -4.19331,120.35481 -4.31346,120.35388 -4.398,120.33786 ', '3', ''),
+(36, 'Lahan Penanaman Jati', 1, '', 3, 'Proses Pananaman ', '-4.64535,120.38323 -4.62266,120.38138 -4.62461,120.40562 -4.64957,120.42942 -4.65195,120.39073 ', '3', 'avatar.png'),
+(37, 'xx', 1, '', 1, 'xx', '-3.79321,102.25139 -3.7677,102.28908 -3.82316,102.30792 ', '3', 'avatar5.png'),
+(38, '33', 1, '', 1, '333', '-3.79321,102.25139 -3.45795,102.51979 -4.08261,102.69673 ', '3', 'avatar.png'),
+(39, '55', 1, '', 1, '55', '-4.97898,100.71742 -3.80332,102.36461 -4.74257,103.34355 ', '3', 'avatar2.png');
 
 -- --------------------------------------------------------
 
@@ -178,7 +182,7 @@ ALTER TABLE `kecamatan`
 -- AUTO_INCREMENT for table `lokasi_lahan`
 --
 ALTER TABLE `lokasi_lahan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `status`
 --
